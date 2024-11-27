@@ -21,6 +21,7 @@ const Timer = () => {
       console.log('interval called');
       setTime(prev => prev + 1);
     }, 1000);
+    console.log(intervalId)
     return () => {
       window.clearInterval(intervalId)
       // console.log('end');
