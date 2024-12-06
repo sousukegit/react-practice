@@ -9,9 +9,9 @@ export default function ArticleForm() {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-
     fetch('/api/article', { method: form.method, body: formData }).then((res) => {
       if(!res.ok) {
+        console.log(res.statusText)
         return 'エラーが発生しました。'
       }
       return res.json().then(data => {
