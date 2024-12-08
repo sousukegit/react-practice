@@ -1,5 +1,14 @@
-import { useState } from "react";
+import { StrictMode, useState } from "react";
 import "./Example.css";
+
+
+const StrictComp = () =>{
+  return (
+    <StrictMode>
+      <Example></Example>
+    </StrictMode>
+  )
+}
 
 const Example = () => {
   console.log("render");
@@ -13,7 +22,8 @@ const Example = () => {
   const obj2 = { ...obj1};
   const isSame = Object.is("",false);
   const isSameEqual = "" == false;
-  console.log(isSameEqual);
+  console.log(isSameEqual,'isSameEqual');
+  console.log(isSame,'isSame')
   
   return (
     <div className="parent">
@@ -38,4 +48,5 @@ const Example = () => {
   );
 };
 
-export default Example;
+export default StrictComp;
+

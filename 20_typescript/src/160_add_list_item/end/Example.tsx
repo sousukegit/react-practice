@@ -26,9 +26,10 @@ const Example: React.FC = () => {
   return (
     <div>
       <input type="text" value={inputText} onChange={handleChange} />
+      <input onChange={(e)=>{e.target.value}}/>
       <button type="button" onClick={handleClick}>
         追加
-      </button>
+      </button> m
       <TaskList todos={todos} />
     </div>
   );

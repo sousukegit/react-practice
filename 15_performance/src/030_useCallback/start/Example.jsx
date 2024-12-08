@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Child from "./Child";
 
 const Example = () => {
@@ -7,10 +7,11 @@ const Example = () => {
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
 
-  const clickHandler = () => {
+  //親が再レンダリングの度に違う関数として定義される
+  const clickHandler = useCallback(() => {
     setCountB((pre) => pre + 1);
-  }
-
+  },[])
+  
   return (
     <div className="parent">
       <div>
